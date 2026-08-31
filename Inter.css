@@ -1,0 +1,165 @@
+*{
+    text-align: left;
+}
+
+p{
+    text-overflow: aqua;
+}
+
+.header{
+    display: flex;
+    justify-content: flex-end;
+    align-items: right;
+    padding: 20px 100px;
+    background-color: #ffffff;
+    box-shadow: 0 0px 0px rgba(0,0,0,0.1);
+    gap: 40px;
+}
+
+
+
+.montserrat-unifiquifer{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    color: black;
+    text-decoration: none;
+    
+}
+#Dec{
+        text-decoration: yellow;
+}
+
+.Kaico{
+    display: lef;
+  justify-content: space-between;
+  width: 100%;
+  text-align: left;
+}
+#Kai{
+    color: #1B4D3E;
+}
+.Kaico{
+    font-weight: bold;
+    font-size: xx-large;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: black;
+    text-decoration: none;
+}
+.Geren{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    color: black;
+    text-decoration: none;
+}
+#um-só-local{
+    color: #1B4D3E;
+    font-weight: bold;
+}
+.Topicos{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    color: black;
+    text-decoration: none;
+}
+.Meu-Botão {
+    display: flex;
+    gap: 36px;
+}
+#Comece,
+#Ver-uma {
+    text-align: center;
+}
+
+#Comece,
+#Ver-uma {
+    width: 224px;
+    height: 38px;
+
+    border-radius: 20px;
+
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+#Comece {
+    background-color: #2f8f18;
+    color: white;
+    border: none;
+}
+
+#Ver-uma {
+    background-color: white;
+    color: #444;
+    border: 2px solid #9ac98c;
+}
+
+
+.Funcionalidades h2{
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold ;
+    font-style: normal;
+    color: black;
+    text-decoration: none;
+}
+.linhas{
+    width: 175px;
+    height: 4px;
+    background-color: green;
+    margin: 5px auto;
+}
+.card{
+    width: 200;
+    height: 170;
+    background-color: white;
+    border-radius: 5px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 3px 5 px rgba(0,0,0,0.25);
+    font-size: 25px;
+    border-radius: 50%;
+    justify-content: center;
+
+}
+.card h3{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    font-size: 18px;
+}
+.card button{
+    width: 125px;
+    height: 26px;
+
+    border: none;
+    border-radius: 15px;
+
+    background-color: #f0f7eb;
+
+    color: #604d42;
+
+    font-size: 11px;
+    text-align: center;
+}
+.card {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
