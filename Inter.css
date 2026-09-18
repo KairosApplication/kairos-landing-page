@@ -1,9 +1,20 @@
-*{
-    text-align: left;
+* {
+    box-sizing: border-box;
 }
 
-p{
-    text-overflow: aqua;
+html,
+body {
+    margin: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.imagem{
+    display: flex;
+    justify-content: start;
+    text-align: left;
+    top: -57px;
+    padding-left: 20px;
 }
 
 .header{
@@ -14,9 +25,20 @@ p{
     background-color: #ffffff;
     box-shadow: 0 0px 0px rgba(0,0,0,0.1);
     gap: 40px;
+    font-size: 20px;
 }
 
+.montserrat-unifiquifer{
+    display: flex;
+    text-align: right;
+    gap: 28px;
+}
 
+#Icone-de-entrada{
+    justify-content: space-between;
+    width: 38px;
+    height: 38px;
+}
 
 .montserrat-unifiquifer{
     font-family: "Montserrat", sans-serif;
@@ -27,22 +49,23 @@ p{
     text-decoration: none;
     
 }
-#Dec{
-        text-decoration: yellow;
+.Topicos#ponto,#pontos,#pontos1{
+    width: 200px;
+    height: auto;
 }
 
 .Kaico{
     display: lef;
   justify-content: space-between;
   width: 100%;
-  text-align: left;
+  font-size: 150px;
 }
 #Kai{
     color: #1B4D3E;
 }
 .Kaico{
     font-weight: bold;
-    font-size: xx-large;
+    font-size: 70px;
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
@@ -57,7 +80,7 @@ p{
     color: black;
     text-decoration: none;
 }
-#um-só-local{
+#um-só-local{ 
     color: #1B4D3E;
     font-weight: bold;
 }
@@ -81,9 +104,9 @@ p{
 #Comece,
 #Ver-uma {
     width: 224px;
-    height: 38px;
+    height: 48px;
 
-    border-radius: 20px;
+    border-radius: 9px;
 
     font-family: Arial, sans-serif;
     font-size: 16px;
@@ -93,42 +116,49 @@ p{
 }
 
 #Comece {
-    background-color: #2f8f18;
+    background-color: #1B4D3E;
     color: white;
     border: none;
 }
 
 #Ver-uma {
     background-color: white;
-    color: #444;
-    border: 2px solid #9ac98c;
+    color: #573D2D;
+    border: 2px solid #FFDA61F2;
+}
+.Geren, .Topicos{
+    font-size: 23px;
 }
 
 
 .Funcionalidades h2{
     text-align: center;
     font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
     font-weight: bold ;
+    font-size: 50px;
     font-style: normal;
     color: black;
     text-decoration: none;
 }
 .linhas{
-    width: 175px;
+    width: 250px;
     height: 4px;
     background-color: green;
     margin: 5px auto;
+    border-radius: 5px;
+}
+.Funcional{
+    display: flex;
+  flex-direction: column; 
+  gap: 10px;
 }
 .card{
     width: 200;
     height: 170;
     background-color: white;
-    border-radius: 5px;
     align-items: center;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 3px 5 px rgba(0,0,0,0.25);
     font-size: 25px;
     border-radius: 50%;
     justify-content: center;
@@ -142,24 +172,618 @@ p{
     color: black;
     text-decoration: none;
     text-align: center;
-    font-size: 18px;
+    font-size: 150;
 }
-.card button{
-    width: 125px;
-    height: 26px;
-
-    border: none;
-    border-radius: 15px;
-
-    background-color: #f0f7eb;
-
-    color: #604d42;
-
-    font-size: 11px;
-    text-align: center;
-}
-.card {
+.cards{
+    position: relative;
     display: flex;
     justify-content: center;
     gap: 10px;
+}
+
+
+.card{
+    width: 350px;
+    height: 350px;
+    box-shadow: 0px 10px 12px rgba(0,0,0,0.25);
+    border-radius: 15px;
+}
+#ponto,#pontos,#pontos1{
+    width: 300px;
+    max-width: 100%;
+    height: auto;
+}
+
+.circuloamar{
+    position: absolute ;
+    width: 720px;
+    height: 700px;
+    background-color: #eeba3f;
+    border-radius: 50%;
+    left: -270px;
+}
+.circulover{
+    position: absolute ;
+    width: 720px;
+    height: 700px;
+    background-color: #1B4D3E;
+    border-radius: 50%;
+    right: -270px;
+}
+.arcoesqu{
+    position: absolute;
+    width: 820px;
+    height: 540px;
+    border: 1px solid #1B4D3E;
+    border-radius: 50%;
+    left: -270px;
+}
+.arcodire{
+    position: absolute ;
+    width: 820px;
+    height: 540px;
+    border: 1px solid #eeba3f;
+    border-radius: 50%;
+    right: -270px;
+}
+/* Inicio para começar a estudar*/
+
+.PassoaPasso {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.PassoaPasso > h2 {
+    margin-bottom: 30px;
+    
+}
+
+
+
+.Carrossel {
+    width: 100%;
+    
+    margin: 0 auto;
+
+    overflow: hidden;
+}
+
+
+
+
+.carrossel {
+    display: flex;
+
+    width: 100%;
+
+    transition: transform 0.5s ease-in-out;
+}
+
+
+
+
+.carrossel > div {
+    min-width: 100%;
+    width: 300px;
+    height: 500px;
+
+    flex-shrink: 0;
+
+    position: relative;
+
+    box-sizing: border-box;
+}
+
+
+
+
+.Cadrastro {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #E9AF22;
+
+    overflow: hidden;
+}
+
+
+
+
+.Acesse {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #164F42;
+
+    overflow: hidden;
+}
+
+
+
+.Perso {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #DCDCE4;
+
+    overflow: hidden;
+}
+
+
+
+
+.Rece {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #000000;
+
+    overflow: hidden;
+}
+
+
+
+.Background,
+.Background1,
+.Background2,
+.Background3 {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    pointer-events: none;
+}
+
+
+
+
+
+.Passos,
+.Dash,
+.Persona,
+.Receba {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    text-align: center;
+}
+
+
+
+
+.Passos h2,
+.Dash h2,
+.Persona h2,
+.Receba h2 {
+    margin: 0;
+
+    font-size: 28px;
+}
+
+
+
+
+#CadastrePS {
+    margin: 0;
+
+    font-size: 16px;
+
+    line-height: 1.5;
+}
+
+
+
+
+.Cadrastro .Passos {
+    color: white;
+}
+
+.Acesse .Dash {
+    color: white;
+}
+
+.Perso .Persona {
+    color: black;
+}
+
+.Rece .Receba {
+    color: white;
+}
+
+
+
+.indicadores {
+    
+    display: flex;
+    position: relative;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: -70px;
+}
+
+.bolabraind{
+    display: flex;
+    position: relative;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 8px;
+
+    
+}
+.bolabraind {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #E6E5ED;
+    left: 590px;
+    
+}
+
+.indicadores button {
+    width: 34px;
+    height: 34px;
+    left: 695px;
+    padding: 0;
+    position: relative;
+    
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: white;
+
+    color: black;
+
+    font-size: 10px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+    
+}
+
+.indicadores button.ativo {
+    transform: scale(1.2);
+    background-color: #E9AF22;
+    width: 60px;
+    height: 60px;
+    left: 695px;
+    border: 2px solid white;
+}
+
+
+
+@media (max-width: 768px) {
+
+    .Carrossel {
+        width: 90%;
+        
+    }
+
+    .carrossel > div {
+        height: 280px;
+    }
+
+    .Passos h2,
+    .Dash h2,
+    .Persona h2,
+    .Receba h2 {
+        font-size: 22px;
+    }
+
+    #CadastrePS {
+        font-size: 14px;
+    }
+}
+
+.PassoaPasso, .Carrossel{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    color: black;
+    text-decoration: none;
+    font-size: 50px
+}
+
+.linhacard{
+    width: 350px;
+    position:relative;
+    height: 25px;
+    background-color: white;
+    margin: 5px auto;
+    border-radius: 5px;
+    right: 225px;
+    top: 100px;
+}
+.Kaico{
+    margin-left: 70px;
+}
+.inicial{
+    margin: 70px;
+}
+.mapa{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    color: black;
+    text-decoration: none;
+}
+.direita{
+    font-size: 90px;
+    font-weight: bold;
+}
+.mapa{
+    margin: 70px;
+}
+.mapa p{
+    font-size: 30px;
+}
+.corzinha{
+    color: #1B4D3E;
+}
+.frasemapa{
+    font-size: 25px;
+}
+.Demo{
+    background-color: #1B4D3E;
+    width: 224px;
+    height: 48px;
+    border-radius: 9px;
+    color: white;
+}
+.Mercado{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    color: black;
+    text-decoration: none;
+}
+.Backgroundmercado{
+    background-color: #F7FAF3;
+    height: 360px;
+}
+.Beneficios{
+    text-align: center;
+    margin-bottom: -100px;
+    font-size: 60px;
+    font-weight: bold;
+}
+.CardMercado{
+    position: relative;
+    background-color: white ;
+    left: 100px;
+    bottom: 190px;
+    width:  1410px;
+    height: 121px;
+    border-radius: 20px;
+}
+.textoMercado,
+.textoMercado1,
+.textoMercado2,
+.textoMercado3{
+    font-size: 20px;
+}
+
+.textoMercado{
+    position: absolute;
+    margin-top: -270px;
+    margin-left: 250px;
+}
+.textoMercado1{
+    position: absolute;
+    margin-top: -313px;
+    margin-left: 550px;
+}
+.textoMercado2{
+    position: absolute;
+    margin-top: -356px;
+    margin-left: 850px;
+}
+.textoMercado3{
+    position: absolute;
+    margin-top: -399px;
+    margin-left: 1180px;
+}
+
+.barra,
+.barra1,
+.barra2{
+    background-color: #D9D9D9;
+    width: 2px;
+    height: 44px;
+}
+
+.barra{
+    position: relative;
+    top: -270px;
+    left: 450px;
+}
+.barra1{
+    position: relative;
+    top: -313px;
+    left: 750px;
+}
+.barra2{
+    position: relative;
+    top: -356px;
+    left: 1080px;
+}
+
+.imagemcard{
+    width: 75px;
+    height: auto;
+}
+.imagemmercado{
+    position: relative;
+    top: -408px;
+    left: 180px;
+    width: 48px;
+    height: auto;
+}
+.imagemmercado1{
+    position: relative;
+    top: -400px;
+    left: 430px;
+    width: 48px;
+    height: auto;
+}
+.imagemmercado2{
+    position: relative;
+    top: -408px;
+    left: 680px;
+    width: 48px;
+    height: auto;
+}
+.imagemmercado3{
+    position: relative;
+    top: -400px;
+    left: 960px;
+    width: 48px;
+    height: auto;
+}
+/* Configuração Geral do Rodapé */
+.rodape {
+    font-family: "Montserrat", sans-serif;
+    background-color: #1B4D3E; /* Substitui a div Backgroundrodape vazia */
+    color: white; /* Coloquei branco para dar leitura no fundo escuro */
+    text-decoration: none;
+    margin-top: 50px;
+}
+
+/* Faixas verdes mais escuras no topo e base */
+.iniciorodape {
+    width: 100%;
+    height: 50px;
+    background-color: #17392F;
+}
+
+/* O Segredo do alinhamento: Flexbox */
+.rodape-conteudo {
+    display: flex;
+    justify-content: space-around; /* Espalha as colunas por igual */
+    align-items: flex-start;
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto; /* Centraliza no meio da tela */
+    gap: 30px;
+    flex-wrap: wrap; /* Em telas pequenas, as colunas descem sozinhas */
+}
+
+/* Configuração de cada coluna */
+.coluna {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Dá um respiro entre os textos e botões */
+    max-width: 320px;
+}
+
+/* Textos e Títulos */
+.Gerencierodape {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+.Nossas, .Perguntas {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Barras Divisórias (Ajustei para ficarem elegantes) */
+.barrarodape {
+    width: 2px;
+    background-color: white;
+    min-height: 350px; /* Faz as barras ficarem em pé entre as colunas */
+}
+.barrahorinzontal {
+    width: 320px;
+    height: 3px;
+    background-color: #E9AF22;
+}
+
+/* Botões e Links de Contato (Com visual de botão) */
+.contatos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-link {
+    background-color: #1B4D3E; /* Cor dourada/amarela que você estava usando */
+    color: #FFFFFF; /* Letra verde escura */
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-style: italic;
+    text-align: left;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    transition: 0.3s;
+}
+.abrirduvi{
+    background-color: #1B4D3E; /* Cor dourada/amarela que você estava usando */
+    color: #E9AF22; /* Letra verde escura */
+    padding: 12px 20px;
+    border: #E9AF22;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: left;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    transition: 0.3s;
+}
+.Monitorerodape{
+    position: relative;
+    right: -150px;
+    bottom: 83px;
+}
+.Recebarodape{
+    position: relative;
+    bottom: 100px;
+}
+.Local{
+    color:#E9AF22;
+}
+.contatos img{
+    width: 30px;
+    height: 30px;
+}
+.contatos a{
+    position: relative;
+    left: 30px;
+    bottom: 43px;
+}
+.contatos div{
+    position: inherit;
+    bottom: 20px;
 }
