@@ -7,37 +7,75 @@ body {
     margin: 0;
     width: 100%;
     overflow-x: hidden;
+    scroll-behavior: smooth;
+    
+}
+body {
+    margin: 0;
+    padding-top: 80px;
 }
 
-.imagem{
-    display: flex;
-    justify-content: start;
-    text-align: left;
-    top: -57px;
-    padding-left: 20px;
+/* Evita que as sections fiquem escondidas atrás do header fixo ao rolar para âncoras */
+section {
+    scroll-margin-top: 100px;
 }
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
 
-.header{
     display: flex;
-    justify-content: flex-end;
-    align-items: right;
+    align-items: center;
+    justify-content: space-between;
+
     padding: 20px 100px;
     background-color: #ffffff;
-    box-shadow: 0 0px 0px rgba(0,0,0,0.1);
-    gap: 40px;
+
     font-size: 20px;
-}
 
-.montserrat-unifiquifer{
+    z-index: 1000;
+}
+.logo {
     display: flex;
-    text-align: right;
-    gap: 28px;
+    align-items: center;
+    flex-shrink: 0;
 }
 
-#Icone-de-entrada{
-    justify-content: space-between;
-    width: 38px;
-    height: 38px;
+#imagem {
+    width: 120px;
+    height: auto;
+    display: block;
+}
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-shrink: 0;
+}
+
+.montserrat-unifiquifer {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    color: black;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#Icone-de-entrada {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#Icone-de-entrada img {
+    width: 24px;
+    height: 24px;
+    display: block;
 }
 
 .montserrat-unifiquifer{
@@ -49,22 +87,26 @@ body {
     text-decoration: none;
     
 }
+    
 .Topicos#ponto,#pontos,#pontos1{
     width: 200px;
     height: auto;
 }
 
 .Kaico{
-    display: lef;
-  justify-content: space-between;
+    display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  gap: 16px;
   width: 100%;
   font-size: 150px;
+    font-weight: 600px;
 }
 #Kai{
     color: #1B4D3E;
 }
 .Kaico{
-    font-weight: bold;
+    
     font-size: 70px;
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
@@ -83,6 +125,13 @@ body {
 #um-só-local{ 
     color: #1B4D3E;
     font-weight: bold;
+}
+.Repositor{
+    width: 750px;
+    max-width: 750px;
+    height: auto;
+    display: block;
+    flex: 0 0 auto;
 }
 .Topicos{
     font-family: "Montserrat", sans-serif;
@@ -119,12 +168,27 @@ body {
     background-color: #1B4D3E;
     color: white;
     border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+#Comece:hover{
+    background-color: white;
+    color: black;
+    border: 2px solid #1B4D3E;
+    transform: scale(1.05); 
 }
 
 #Ver-uma {
     background-color: white;
     color: #573D2D;
     border: 2px solid #FFDA61F2;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+#Ver-uma:hover{
+    transform: 0.2s;
+    background-color: #FFDA61F2;
+    color: black;
+    border: 2px solid #FFDA61F2;
+    transform: scale(1.05); 
 }
 .Geren, .Topicos{
     font-size: 23px;
@@ -135,7 +199,7 @@ body {
     text-align: center;
     font-family: "Montserrat", sans-serif;
     font-weight: bold ;
-    font-size: 50px;
+    font-size: 70px;
     font-style: normal;
     color: black;
     text-decoration: none;
@@ -143,7 +207,7 @@ body {
 .linhas{
     width: 250px;
     height: 4px;
-    background-color: green;
+    background-color: #1B4D3E;
     margin: 5px auto;
     border-radius: 5px;
 }
@@ -164,6 +228,24 @@ body {
     justify-content: center;
 
 }
+.card:hover{
+    background-color: #1B4D3E;
+    transform: scale(1.05);
+}
+.card:hover{
+    border: 4px solid white ;
+}
+.card:hover h3{
+    color: white;
+}
+.card:hover img{
+    filter: brightness(0) invert(1);
+    transform: scale(1.05);
+}
+.card img{
+    height: 65px;
+    width: 65px;
+}
 .card h3{
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
@@ -183,10 +265,11 @@ body {
 
 
 .card{
-    width: 350px;
-    height: 350px;
+    width: 320px;
+    height: 320px;
     box-shadow: 0px 10px 12px rgba(0,0,0,0.25);
     border-radius: 15px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 #ponto,#pontos,#pontos1{
     width: 300px;
@@ -243,10 +326,11 @@ body {
 
 .Carrossel {
     width: 100%;
-    
+
     margin: 0 auto;
 
     overflow: hidden;
+    position: relative;
 }
 
 
@@ -365,6 +449,13 @@ body {
 
     width: 100%;
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    padding: 45px 20px 110px;
+
     text-align: center;
 }
 
@@ -381,17 +472,44 @@ body {
 }
 
 
+.Carrossel .bolacarrosel img{
+    position: static;
+    width: 60px;
+    height: 60px;
+    left: auto;
+    top: auto;
+    display: block;
+}
 
-
+.bolacarrosel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto;
+    background-color: #FFFCFC;
+}
 #CadastrePS {
-    margin: 0;
+    position: static;
 
-    font-size: 16px;
+    top: auto;
+
+    margin: 0 auto;
+    max-width: 700px;
+
+    font-size: 26px;
 
     line-height: 1.5;
 }
 
-
+#titulocadastro{
+    position: static;
+    font-weight: bolder;
+    font-size: 50px;
+    margin: 25px 0 10px;
+}
 
 
 .Cadrastro .Passos {
@@ -413,18 +531,51 @@ body {
 
 
 .indicadores {
-    
+
     display: flex;
-    position: relative;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 25px;
+    z-index: 5;
 
     justify-content: center;
     align-items: center;
 
-    gap: 8px;
+    gap: 12px;
 
-    margin-top: -70px;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+}
+.indicadores button:hover {
+    background-color: #eeba3f;
+    color: #000000;
+    border: 2px solid white ;
+    transform: scale(1.15);
 }
 
+.indicadores button:focus-visible,
+.lista-contatos a:focus-visible,
+.btn-duvidas:focus-visible,
+.header a:focus-visible,
+#Comece:focus-visible,
+#Ver-uma:focus-visible,
+.card:focus-visible {
+    outline: 3px solid #eeba3f;
+    outline-offset: 3px;
+}
+
+.lista-contatos a:focus-visible {
+    color: #E9AF22;
+    transform: scale(1.2);
+}
+
+.btn-duvidas:focus-visible {
+    background-color: #E9AF22;
+    color: #1B4D3E;
+    transform: scale(1.2);
+}
 .bolabraind{
     display: flex;
     position: relative;
@@ -448,9 +599,12 @@ body {
 .indicadores button {
     width: 34px;
     height: 34px;
-    left: 695px;
+    left: auto;
     padding: 0;
-    position: relative;
+    position: static;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     
 
     border: none;
@@ -466,15 +620,17 @@ body {
     cursor: pointer;
 
     transition: 0.3s ease;
-    
+
+    font-size: 10px;
 }
 
 .indicadores button.ativo {
     transform: scale(1.2);
     background-color: #E9AF22;
-    width: 60px;
-    height: 60px;
-    left: 695px;
+    width: 50px;
+    height: 50px;
+    left: auto;
+    font-size: 14px;
     border: 2px solid white;
 }
 
@@ -524,11 +680,47 @@ body {
     top: 100px;
 }
 .Kaico{
-    margin-left: 70px;
+    margin: 0 0 0 70px;
+    line-height: 1;
+    padding: 0;
 }
 .inicial{
-    margin: 70px;
+    margin: 0 70px 70px 70px;
+    padding-top: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
 }
+.hero-texto{
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    flex: 1 1 auto;
+    min-width: 0;
+    margin-top: 190px;
+}
+@media (max-width: 900px){
+    .inicial{
+        flex-direction: column;
+        margin: 24px 20px 40px 20px;
+        text-align: center;
+    }
+    .hero-texto{
+        align-items: center;
+    }
+    .Meu-Botão{
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .Repositor{
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        margin: 0 auto;
+    }
+}
+
 .mapa{
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
@@ -538,14 +730,14 @@ body {
     text-decoration: none;
 }
 .direita{
-    font-size: 90px;
-    font-weight: bold;
+    font-size: 65px;
+    font-weight: 600px;
 }
 .mapa{
     margin: 70px;
 }
 .mapa p{
-    font-size: 30px;
+    font-size: 20px;
 }
 .corzinha{
     color: #1B4D3E;
@@ -553,14 +745,264 @@ body {
 .frasemapa{
     font-size: 25px;
 }
-.Demo{
-    background-color: #1B4D3E;
-    width: 224px;
-    height: 48px;
-    border-radius: 9px;
+
+.Mercado {
+    font-family: "Montserrat", sans-serif;
+    background-color: #F7FAF3; /* Fundo aplicado direto na seção */
+    padding: 60px 20px; /* Dá espaço ao redor sem precisar fixar altura */
+}
+
+.Beneficios {
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.CardMercado {
+    background-color: white;
+    max-width: 1300px;
+    margin: 0 auto; /* Centraliza o card na tela */
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Sombra leve opcional */
+    
+    /* Flexbox: Coloca tudo lado a lado automaticamente */
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+.Mercado img{
+    position: relative;
+    left: -20px;
+    height: 60px;
+    width: 60px;
+}
+#reduzaper{
+    position: relative;
+    right: -50px;
+}
+#casinhalam{
+    position: relative;
+    left: 40px;
+    height: 60px;
+    width: 50px;
+}
+#Casinha{
+    height: 60px;
+    width: 50px;
+}
+.item-beneficio {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Distância entre a imagem e o texto */
+}
+.item-beneficio1 {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Distância entre a imagem e o texto */
+}
+
+.item-beneficio img {
+    width: 48px;
+    height: auto;
+}
+
+.item-beneficio p {
+    font-size: 20px;
+    margin: 0;
     color: white;
 }
-.Mercado{
+.item-beneficio1 p{
+    font-size: 20px;
+    margin: 0;
+    color: black;
+}
+
+.barra {
+    background-color: #D9D9D9;
+    width: 2px;
+    height: 44px;
+}
+
+/* Configuração Geral do Rodapé */
+.rodape {
+    font-family: "Montserrat", sans-serif;
+    background-color: #1B4D3E; /* Fundo verde padrão */
+    color: white;
+    margin-top: 0; /* ← SEM espaçinho branco entre Valores e rodapé */
+}
+
+/* Container principal alinhado com Flexbox */
+.rodape-conteudo {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+    flex-wrap: wrap; /* Para telas menores */
+}
+.perguntasrodape{
+    position: relative;
+    font-size: 30px;
+    top: 25px;
+}
+
+/* Configuração de cada coluna */
+.coluna {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 280px;
+}
+
+/* Textos em Destaque (Amarelo) */
+.destaque {
+    color: #E9AF22;
+    font-weight: bold;
+}
+
+/* --- COLUNA 1 --- */
+.logo-rodape {
+    width: 220px; /* Ajuste o tamanho da logo conforme necessário */
+    margin-bottom: 25px;
+}
+
+.texto-gerencie {
+    font-size: 24px;
+    line-height: 1.4;
+    margin-bottom: 30px;
+}
+
+.beneficios-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 10px;
+    
+}
+.beneficios-grid p{
+    font-size: 16px;
+}
+.item-beneficio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    line-height: 1.3;
+}
+
+.item-beneficio img {
+    width: 30px;
+    height: 30px;
+}
+
+.item-largo {
+    grid-column: 1 / -1; /* Ocupa as duas colunas */
+}
+
+/* --- DIVISÓRIAS --- */
+.barra-vertical {
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.5); /* Linha branca levemente transparente */
+    margin: 0 10px;
+}
+.barra-horizontal {
+    width: 180px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 10px 0 25px 0;
+    position: relative;
+   bottom: 20px;
+}
+.barra-horizontal1 {
+    width: 180px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 10px 0 25px 0;
+    position: relative;
+    top: 20px;
+}
+
+/* --- COLUNAS 2 e 3 (Títulos e Textos) --- */
+.coluna h2 {
+    font-size: 24px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.texto-descritivo {
+    font-size: 22px;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+/* --- COLUNA 2 (Contatos) --- */
+.lista-contatos {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.lista-contatos a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-style: italic;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.lista-contatos a img {
+    width: 24px;
+    height: 24px;
+}
+
+.lista-contatos a:hover {
+    color: #E9AF22; /* Efeito ao passar o mouse */
+    transform: scale(1.1);
+}
+
+.btn-duvidas {
+    background-color: transparent; 
+    color: #E9AF22;
+    padding: 10px 24px;
+    border: 1px solid #E9AF22;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    width: max-content;
+    transition: 0.3s;
+}
+
+.btn-duvidas:hover {
+    background-color: #E9AF22;
+    color: #1B4D3E;
+    transform: scale(1.2);
+}
+
+.rodape-inferior {
+    width: 100%;
+    background-color: #17392F; 
+    text-align: center;
+    padding: 20px;
+    font-size: 22px;
+    color: white;
+}
+.iniciorodape{
+    position: relative;
+    height: 100px;
+    width: auto;
+    background-color: #17392F;
+}
+
+/* inicio da section de valores para criação - DESLIGADO (o bloco novo abaixo manda) */
+.valores-desligado{
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-weight: normal;
@@ -568,222 +1010,279 @@ body {
     color: black;
     text-decoration: none;
 }
-.Backgroundmercado{
-    background-color: #F7FAF3;
-    height: 360px;
+/*<div class="bolavalores"></div>
+        <div class="arovalores"></div>*/
+.bolasvalor{
+    display: none;
+    justify-content:flex-end ;
+    align-items:end;
 }
-.Beneficios{
-    text-align: center;
-    margin-bottom: -100px;
-    font-size: 60px;
-    font-weight: bold;
-}
-.CardMercado{
+.bolavalores{
     position: relative;
-    background-color: white ;
-    left: 100px;
-    bottom: 190px;
-    width:  1410px;
-    height: 121px;
-    border-radius: 20px;
-}
-.textoMercado,
-.textoMercado1,
-.textoMercado2,
-.textoMercado3{
-    font-size: 20px;
-}
-
-.textoMercado{
-    position: absolute;
-    margin-top: -270px;
-    margin-left: 250px;
-}
-.textoMercado1{
-    position: absolute;
-    margin-top: -313px;
-    margin-left: 550px;
-}
-.textoMercado2{
-    position: absolute;
-    margin-top: -356px;
-    margin-left: 850px;
-}
-.textoMercado3{
-    position: absolute;
-    margin-top: -399px;
-    margin-left: 1180px;
-}
-
-.barra,
-.barra1,
-.barra2{
-    background-color: #D9D9D9;
-    width: 2px;
-    height: 44px;
-}
-
-.barra{
-    position: relative;
-    top: -270px;
-    left: 450px;
-}
-.barra1{
-    position: relative;
-    top: -313px;
-    left: 750px;
-}
-.barra2{
-    position: relative;
-    top: -356px;
-    left: 1080px;
-}
-
-.imagemcard{
-    width: 75px;
-    height: auto;
-}
-.imagemmercado{
-    position: relative;
-    top: -408px;
-    left: 180px;
-    width: 48px;
-    height: auto;
-}
-.imagemmercado1{
-    position: relative;
-    top: -400px;
-    left: 430px;
-    width: 48px;
-    height: auto;
-}
-.imagemmercado2{
-    position: relative;
-    top: -408px;
-    left: 680px;
-    width: 48px;
-    height: auto;
-}
-.imagemmercado3{
-    position: relative;
-    top: -400px;
-    left: 960px;
-    width: 48px;
-    height: auto;
-}
-/* Configuração Geral do Rodapé */
-.rodape {
-    font-family: "Montserrat", sans-serif;
-    background-color: #1B4D3E; /* Substitui a div Backgroundrodape vazia */
-    color: white; /* Coloquei branco para dar leitura no fundo escuro */
-    text-decoration: none;
-    margin-top: 50px;
-}
-
-/* Faixas verdes mais escuras no topo e base */
-.iniciorodape {
-    width: 100%;
-    height: 50px;
-    background-color: #17392F;
-}
-
-/* O Segredo do alinhamento: Flexbox */
-.rodape-conteudo {
-    display: flex;
-    justify-content: space-around; /* Espalha as colunas por igual */
-    align-items: flex-start;
-    padding: 50px 20px;
-    max-width: 1200px;
-    margin: 0 auto; /* Centraliza no meio da tela */
-    gap: 30px;
-    flex-wrap: wrap; /* Em telas pequenas, as colunas descem sozinhas */
-}
-
-/* Configuração de cada coluna */
-.coluna {
-    display: flex;
-    flex-direction: column;
-    gap: 15px; /* Dá um respiro entre os textos e botões */
-    max-width: 320px;
-}
-
-/* Textos e Títulos */
-.Gerencierodape {
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 15px;
-}
-.Nossas, .Perguntas {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-/* Barras Divisórias (Ajustei para ficarem elegantes) */
-.barrarodape {
-    width: 2px;
-    background-color: white;
-    min-height: 350px; /* Faz as barras ficarem em pé entre as colunas */
-}
-.barrahorinzontal {
-    width: 320px;
-    height: 3px;
+    left: 820px;
+    bottom: 280px;
     background-color: #E9AF22;
+    width: 500px;
+    height: 500px;
+    border-radius: 9000px;
+    z-index: -1;
+    display: none;
+}
+.arovalores{
+    background-color: none;
+    border: 2px solid #E9AF22;
+    width: 600px;
+    height: 600px;
+    border-radius: 9000px;
+    z-index: -2;
+    position: relative;
+    bottom: 230px;
+    left: 270px;
+    display: none;
 }
 
-/* Botões e Links de Contato (Com visual de botão) */
-.contatos {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+/* ===== SEÇÃO VALORES - EDITE OS TAMANHOS AQUI ===== */
+.valores{
+  --largura-palco: 650px; /* ← LARGURA do carrossel */
+  --altura-card: 250px; /* ← ALTURA do card verde */
+  --tamanho-titulo: 52px; /* ← TAMANHO do "Foco" */
+  --tamanho-texto: 19px; /* ← TAMANHO do texto */
+  --tamanho-imagem: 170px; /* ← TAMANHO da imagem */
+  --cor-card: #1E4D3B; /* ← COR do card */
+  --cor-aba1: #111112; /* ← COR aba preta */
+  --cor-aba2: #E0A81E; /* ← COR aba amarela */
+  position:relative !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  padding:46px 16px 24px !important; /* ← PADDING-BOTTOM menor = menos faixa branca */
+  margin-bottom:0 !important;
+  text-align:center !important;
+  background:#fff !important;
+  overflow:hidden !important;
+  font-family:"Montserrat", sans-serif !important;
+}
+.valor-canto{
+  position:absolute !important;
+  width:380px !important; /* ← TAMANHO da bolinha (aumente aqui: 380px) */
+  height:380px !important; /* ← TAMANHO da bolinha (aumente aqui: 380px) */
+  border-radius:50% !important;
+  background:#E9AF22 !important; /* ← COR da bolinha (amarelo) */
+  background-color:#E9AF22 !important;
+  pointer-events:none;
+  z-index:0 !important;
+}
+.valor-canto::before{
+  content:"" !important;
+  position:absolute !important;
+  inset:-28px !important; /* ← DISTÂNCIA do anel fino ao redor */
+  border:2px solid #E9AF22 !important; /* ← COR do anel fino */
+  border-radius:50% !important;
+  background:transparent !important;
+}
+.canto-sup{
+  top:-190px !important; /* ← POSIÇÃO: quanto mais negativo, mais escondida */
+  right:-190px !important; /* ← POSIÇÃO lateral */
+}
+.canto-inf{
+  bottom:-190px !important; /* ← POSIÇÃO: quanto mais negativo, mais escondida */
+  left:-190px !important; /* ← POSIÇÃO lateral */
+}
+.valores .nossovalo{
+  font-size:64px !important; /* ← TAMANHO "Nossos Valores" */
+  font-weight: semi-bold !important;
+  margin:10px 0 8px !important;
+  color:#1c1c1c !important;
+  position:relative;
+  z-index:1;
+}
+.valores .linhahorisontal{
+  /* ▼▼▼ BARRINHA EMBAIXO DO TÍTULO - EDITE AQUI ▼▼▼ */
+  --largura-barra: 300px; /* ← LARGURA da barrinha (ex: 100px, 200px) */
+  --altura-barra: 6px; /* ← ALTURA/ESPESSURA da barrinha (ex: 4px, 10px) */
+  width:var(--largura-barra) !important;
+  height:var(--altura-barra) !important;
+  background:#1B4D3E !important; /* ← COR da barrinha */
+  border-radius:99px; /* ← ARREDONDAMENTO (99px = redonda, 0 = quadrada) */
+  margin:0 auto 12px !important;
+  position:relative;
+  z-index:1;
+}
+.valores .textinho{
+  font-size:17px !important; /* ← TAMANHO subtítulo */
+  line-height:1.5 !important;
+  color:#6B5B4F !important;
+  margin:0 0 30px !important;
+  position:relative;
+  z-index:1;
+}
+.valores-palco{
+  width:min(650px,92vw) !important; /* ← LARGURA do carrossel */
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  padding-top:24px !important;
+  padding-bottom:0 !important; /* ← sem respiro extra dentro do palco */
+  margin-bottom:0 !important;
+  position:relative;
+  z-index:1;
+}
+.valor-trilho{
+  width:100% !important;
+  position:relative !important;
+}
+/* ABAS DE TRÁS (as 2 barrinhas que giram de cor) */
+.valor-abas{
+  position:absolute !important;
+  top:0 !important;
+  left:0 !important;
+  right:0 !important;
+  height:0 !important;
+  z-index:0 !important;
+  pointer-events:none !important;
+}
+.valor-aba{
+  position:absolute !important;
+  height:14px !important; /* ← ALTURA das abinhas de trás */
+  border-radius:8px 8px 0 0 !important;
+  transition:background-color .35s ease !important;
+}
+.aba-meio{
+  top:-11px !important;
+  left:12px !important;
+  right:12px !important;
+  background:#111112 !important; /* ← COR inicial (JS troca depois) */
+}
+.aba-tras{
+  top:-24px !important;
+  left:30px !important;
+  right:30px !important;
+  background:#E0A81E !important; /* ← COR inicial (JS troca depois) */
+}
+/* cards: só o ativo aparece (carrossel) */
+.valor-trilho .valor-card{
+  display:none;
+  position:relative !important;
+  z-index:1 !important;
+  width:100% !important;
+  min-height:250px !important; /* ← ALTURA do card verde */
+  border-radius:12px !important;
+  padding:30px 30px !important; /* ← ESPAÇO interno */
+  flex-direction:row !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  gap:18px !important;
+  text-align:left !important;
+  color:#fff !important;
+  isolation:isolate !important;
+  box-sizing:border-box !important;
+}
+.valor-trilho .valor-card.is-ativo{ display:flex; }
+/* ▼▼▼ COR DE CADA CARD - TROQUE O HEX AQUI (CSS, sem JS) ▼▼▼
+   .valor-verde  = card FOCO
+   .valor-preto  = card PERSISTÊNCIA
+   .valor-amarelo = card ESPERANÇA */
+.valor-trilho .valor-card.valor-verde{ background:#1E4D3B; background-color:#1E4D3B; }
+.valor-trilho .valor-card.valor-preto{ background:#101010; background-color:#101010; }
+.valor-trilho .valor-card.valor-amarelo{ background:#E9AF22; background-color:#E9AF22; }
+/* abas antigas via ::before/::after DESLIGADAS (agora são divs que o JS pinta) */
+.valor-trilho .valor-card::before,
+.valor-trilho .valor-card::after{
+  content:none !important;
+  display:none !important;
+}
+.valor-texto{ flex:1 1 auto !important; min-width:0 !important; }
+.valores .valor-titulo{
+  margin:0 0 12px !important;
+  font-size:52px !important; /* ← TAMANHO do "Foco" */
+  font-weight:800 !important;
+  line-height:1 !important;
+  color:#fff !important;
+}
+.valores .valor-desc{
+  margin:0 !important;
+  font-size:19px !important; /* ← TAMANHO do texto */
+  line-height:1.55 !important;
+  font-weight:500 !important;
+  color:#F3F6F2 !important;
+}
+/* TAG DE IMAGEM - você coloca o src no HTML depois */
+.valor-foto{
+  flex:0 0 170px !important; /* ← LARGURA reservada p/ imagem */
+  width:170px !important; /* ← LARGURA da imagem */
+  height:170px !important; /* ← ALTURA da imagem */
+  object-fit:contain !important;
+  display:block !important;
+  border:none !important;
+  background:transparent !important;
+}
+/* enquanto o src estiver vazio, esconde o <img> (sem ícone quebrado).
+   Quando você preencher o src no HTML, a imagem aparece sozinha. */
+.valor-foto[src=""]{
+  display:none !important;
+}
+.valor-nav{
+  display:flex !important;
+  gap:10px !important;
+  justify-content:center !important;
+  align-items:center !important;
+  margin-top:18px !important;
+}
+.valor-btn{
+  width:38px !important; /* ← TAMANHO botão */
+  height:38px !important; /* ← TAMANHO botão */
+  border:none !important;
+  border-radius:9px !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  font-size:18px !important;
+  font-weight:800 !important;
+  line-height:1 !important;
+  cursor:pointer !important;
+  color:#fff !important;
+  padding:0 !important;
+}
+.valor-btn-amarelo{ background:#E9AF22 !important; }
+.valor-btn-verde{ background:#1E4D3B !important; }
+.valores .bolasvalor{ display:none !important; }
+.valores .bolavalores1,
+.valores .arovalores1{ display:none !important; }
+/* remove estilos antigos da caixa tracejada */
+.valores-caixa{ border:none !important; background:transparent !important; padding-top:24px !important; }
+@media (max-width:700px){
+  .valores-palco{ width:92vw !important; }
+  .valor-foto{ flex-basis:120px !important; width:120px !important; height:120px !important; }
+  .valores .valor-titulo{ font-size:38px !important; }
+  .valores .valor-desc{ font-size:16px !important; }
 }
 
-.btn-link {
-    background-color: #1B4D3E; /* Cor dourada/amarela que você estava usando */
-    color: #FFFFFF; /* Letra verde escura */
-    padding: 12px 20px;
-    border: none;
-    border-radius: 8px;
-    text-decoration: none;
-    font-style: italic;
-    text-align: left;
-    cursor: pointer;
-    font-family: "Montserrat", sans-serif;
-    transition: 0.3s;
-}
-.abrirduvi{
-    background-color: #1B4D3E; /* Cor dourada/amarela que você estava usando */
-    color: #E9AF22; /* Letra verde escura */
-    padding: 12px 20px;
-    border: #E9AF22;
-    border-radius: 8px;
-    font-weight: bold;
-    text-align: left;
-    cursor: pointer;
-    font-family: "Montserrat", sans-serif;
-    transition: 0.3s;
-}
-.Monitorerodape{
-    position: relative;
-    right: -150px;
-    bottom: 83px;
-}
-.Recebarodape{
-    position: relative;
-    bottom: 100px;
-}
-.Local{
-    color:#E9AF22;
-}
-.contatos img{
-    width: 30px;
-    height: 30px;
-}
-.contatos a{
-    position: relative;
-    left: 30px;
-    bottom: 43px;
-}
-.contatos div{
-    position: inherit;
-    bottom: 20px;
+/* Prévia do mapa com os mockups já existentes em Assets. */
+.mapa{ margin:70px 70px 70px 40px; font-family:"Montserrat",sans-serif; color:#332e2b; }
+.mapa-conteudo{ display:grid; grid-template-columns:minmax(300px,1.1fr) minmax(0,1.3fr); align-items:stretch; gap:34px; max-width:1500px; margin:auto; }
+.mapa-texto{ position:relative; z-index:1; display:flex; flex-direction:column; justify-content:space-between; padding:8px 0; }
+.mapa .direita{ display:block; margin:0; font-size:clamp(40px,4.4vw,62px); font-weight:500; line-height:1.12; }
+.mapa .frasemapa{ max-width:430px; margin:20px 0 36px; font-size:clamp(21px,2vw,26px); line-height:1.28; color:#655047; }
+.mapa-lista{ display:grid; gap:16px; margin:0; padding:0; list-style:none; font-size:22px; }
+.mapa-lista li{ display:flex; align-items:center; gap:12px; }
+.mapa-lista img{ width:19px; height:19px; }
+.mapa-visual{ position:relative; min-width:0; aspect-ratio:1.42; display:flex; align-items:center; }
+.mapa-monitor{ position:relative; z-index:1; display:block; width:100%; height:auto; }
+.mapa-celular{ position:absolute; z-index:2; right:-2%; bottom:-2%; width:26%; height:auto; filter:drop-shadow(0 5px 3px #0003); }
+.mapa-circulo{ position:absolute; display:block; border-radius:50%; pointer-events:none; }
+.mapa-circulo-grande{ width:82%; aspect-ratio:1; left:5%; top:-7%; border:1px solid #e9af22; }
+.mapa-circulo-amarelo{ width:44px; aspect-ratio:1; right:1%; top:0; background:#e9af22; }
+.mapa-circulo-verde{ width:27px; aspect-ratio:1; right:5%; top:12%; background:#1b4d3e; }
+.header{ box-sizing:border-box; justify-content:space-between; gap:32px; padding:16px 60px; min-height:76px; }
+.header .logo{ display:flex; }
+.header .nav-links{ gap:32px; }
+.header .montserrat-unifiquifer{ color:#604a40; font-size:20px; white-space:nowrap; }
+#Icone-de-entrada img{ width:34px; height:34px; }
+.card:hover .alerta-icon{ content:url("Assets/Group 130-hover.svg"); filter:none; }
+@media(max-width:800px){
+  .mapa{ margin:48px 24px; }
+  .mapa-conteudo{ grid-template-columns:1fr; gap:18px; }
+  .mapa-texto{ display:block; }
+  .mapa-visual{ width:100%; }
+  .mapa-lista{ font-size:17px; gap:10px; }
 }
